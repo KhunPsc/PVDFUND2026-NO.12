@@ -130,9 +130,9 @@
     }
 
     .slogan-text {
-      font-size: clamp(1.2rem, 3.5vw + 0.5rem, 3.5rem);
+      font-size: clamp(0.9rem, 4vw, 3.5rem);
       line-height: 1.4;
-      word-break: keep-all;
+      white-space: nowrap;
     }
     
     /* Responsive iframe container */
@@ -281,54 +281,54 @@
       <h2 class="font-heading font-black text-2xl sm:text-3xl text-gradient-blue section-title mb-10 sm:mb-12 tracking-wider">นโยบายขับเคลื่อนเพื่อสมาชิก</h2>
       
       <!-- Policy Display Area -->
-      <div class="grid grid-cols-1 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8 items-stretch">
         
         <!-- New Members -->
-        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-[#12285e]/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner border border-blue-100">🌱</div>
-          <div class="text-left flex-1">
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-6 underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใหม่</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-[#12285e] hover:bg-white transition-colors">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-blue rounded-full flex items-center justify-center text-white shrink-0 mt-1 shadow-md text-xs sm:text-sm">✓</div>
-                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">สับเปลี่ยนรูปแบบการลงทุนฟรีไม่จำกัดจำนวนครั้งใน 2 ปีแรก (24 งวด) เพื่อส่งเสริมให้พนักงานใหม่ได้ลองผิด ลองถูกด้วยตัวเอง เสริมสร้าง Mindset ในการลงทุนและการบริหารจัดการเงิน</p>
-              </div>
+        <div class="bg-green-100 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 shadow-xl shadow-[#12285e]/10 border border-green-200 flex flex-col transition-transform duration-300 hover:-translate-y-1 h-full">
+          <div class="flex flex-col items-center text-center sm:text-left sm:flex-row sm:items-center gap-4 mb-6">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-sm border border-green-100">🌱</div>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใหม่</h3>
+          </div>
+          <div class="space-y-4 flex-1 flex flex-col">
+            <div class="flex items-start gap-3 sm:gap-4 p-5 sm:p-6 bg-white/90 rounded-2xl border-l-4 border-[#12285e] hover:bg-white transition-colors h-full shadow-sm">
+              <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-blue rounded-full flex items-center justify-center text-white shrink-0 mt-1 shadow-md text-xs sm:text-sm">✓</div>
+              <p class="font-medium text-slate-700 leading-relaxed text-sm sm:text-base tracking-wide">สับเปลี่ยนรูปแบบการลงทุนฟรีไม่จำกัดจำนวนครั้งใน 2 ปีแรก (24 งวด) เพื่อส่งเสริมให้พนักงานใหม่ได้ลองผิด ลองถูกด้วยตัวเอง เสริมสร้าง Mindset ในการลงทุนและการบริหารจัดการเงิน</p>
             </div>
           </div>
         </div>
 
         <!-- Current Members -->
-        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-[#12285e]/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner border border-blue-100">👥</div>
-          <div class="text-left flex-1">
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-6 underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกปัจจุบัน</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-[#12285e] hover:bg-white transition-colors">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-blue rounded-full flex items-center justify-center text-white shrink-0 mt-1 shadow-md text-xs sm:text-sm">✓</div>
-                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">ปรับสัดส่วนการลงทุนแบบแยกส่วน (Flexible Dual-Track Investment) ให้สมาชิกสามารถแยกสัดส่วนเงินหักรายเดือนไว้รอลงทุนในจังหวะที่เหมาะสมได้</p>
-              </div>
+        <div class="bg-blue-100 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 shadow-xl shadow-[#12285e]/10 border border-blue-200 flex flex-col transition-transform duration-300 hover:-translate-y-1 h-full">
+          <div class="flex flex-col items-center text-center sm:text-left sm:flex-row sm:items-center gap-4 mb-6">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-sm border border-blue-100">👥</div>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกปัจจุบัน</h3>
+          </div>
+          <div class="space-y-4 flex-1 flex flex-col">
+            <div class="flex items-start gap-3 sm:gap-4 p-5 sm:p-6 bg-white/90 rounded-2xl border-l-4 border-[#12285e] hover:bg-white transition-colors h-full shadow-sm">
+              <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-blue rounded-full flex items-center justify-center text-white shrink-0 mt-1 shadow-md text-xs sm:text-sm">✓</div>
+              <p class="font-medium text-slate-700 leading-relaxed text-sm sm:text-base tracking-wide">ปรับสัดส่วนการลงทุนแบบแยกส่วน (Flexible Dual-Track Investment) ให้สมาชิกสามารถแยกสัดส่วนเงินหักรายเดือนไว้รอลงทุนในจังหวะที่เหมาะสมได้</p>
             </div>
           </div>
         </div>
 
         <!-- Retiring Members -->
-        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-[#12285e]/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner border border-amber-100">🏖️</div>
-          <div class="text-left flex-1">
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-6 underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใกล้เกษียณ / เกษียณแล้ว</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
-                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">เสนอเพิ่ม “นโยบายกองทุนตั้งรับ (เงินฝาก+ตราสารหนี้ระยะสั้น)” (Safety Net Fund) เน้นบริหารจัดการเงินฝากและกองทุนตราสารหนี้ระยะสั้นที่ผันผวนต่ำมาก เพื่อเป็นที่พักเงิน <span class="text-[#12285e] font-bold">ให้เงินต้นปลอดภัยไม่ติดลบ เหมาะสำหรับผู้ที่ใกล้เกษียณที่ไม่ต้องการแบกรับความเสี่ยงจากการผันผวนที่อาจเกิดขึ้นในช่วงที่สมาชิกกำลังจะเกษียณ</span></p>
-              </div>
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
-                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">ปรับปรุงหลักเกณฑ์การคงเงินและการรับเงินเป็นงวด อนุญาตให้สมาชิกที่รับเงินเป็นงวดเปลี่ยนกลับไปคงเงินไว้ในกองทุนได้ เช่น 1 ครั้งตลอดชีพ หรือภายใน 5 ปี</p>
-              </div>
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
-                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">Retirement Clinic: ให้บริการคำปรึกษาแบบตัวต่อตัวเพื่อวางแผนภาษีและวิธีการจัดการเงินหลังเกษียณให้คุ้มค่าที่สุด</p>
-              </div>
+        <div class="bg-amber-100 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 shadow-xl shadow-[#12285e]/10 border border-amber-200 flex flex-col transition-transform duration-300 hover:-translate-y-1 h-full">
+          <div class="flex flex-col items-center text-center sm:text-left sm:flex-row sm:items-center gap-4 mb-6">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-sm border border-amber-100">🏖️</div>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใกล้เกษียณ</h3>
+          </div>
+          <div class="space-y-3 sm:space-y-4 flex-1 flex flex-col">
+            <div class="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white/90 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors shadow-sm">
+              <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
+              <p class="font-medium text-slate-700 leading-relaxed text-sm sm:text-base tracking-wide">เสนอเพิ่ม “นโยบายกองทุนตั้งรับ (เงินฝาก+ตราสารหนี้ระยะสั้น)” (Safety Net Fund) เน้นบริหารจัดการเงินฝากและกองทุนตราสารหนี้ระยะสั้นที่ผันผวนต่ำมาก เพื่อเป็นที่พักเงิน <span class="text-[#12285e] font-bold">ให้เงินต้นปลอดภัยไม่ติดลบ เหมาะสำหรับผู้ที่ใกล้เกษียณที่ไม่ต้องการแบกรับความเสี่ยงจากการผันผวนที่อาจเกิดขึ้นในช่วงที่สมาชิกกำลังจะเกษียณ</span></p>
+            </div>
+            <div class="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white/90 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors shadow-sm">
+              <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
+              <p class="font-medium text-slate-700 leading-relaxed text-sm sm:text-base tracking-wide">ปรับปรุงหลักเกณฑ์การคงเงินและการรับเงินเป็นงวด อนุญาตให้สมาชิกที่รับเงินเป็นงวดเปลี่ยนกลับไปคงเงินไว้ในกองทุนได้ เช่น 1 ครั้งตลอดชีพ หรือภายใน 5 ปี</p>
+            </div>
+            <div class="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white/90 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors shadow-sm">
+              <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
+              <p class="font-medium text-slate-700 leading-relaxed text-sm sm:text-base tracking-wide">Retirement Clinic: ให้บริการคำปรึกษาแบบตัวต่อตัวเพื่อวางแผนภาษีและวิธีการจัดการเงินหลังเกษียณให้คุ้มค่าที่สุด</p>
             </div>
           </div>
         </div>
@@ -573,7 +573,7 @@
                 
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 sm:p-10 max-w-3xl mx-auto shadow-xl">
                     <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4 tracking-wide text-white">
-                        ลงคะแนนผ่านระบบ <span class="text-[#facc15] drop-shadow-md">PVD E-VOTE</span>
+                        ลงคะแนนผ่านระบบ <span class="text-cyan-400 drop-shadow-md">PVD</span> <span class="text-pink-500 drop-shadow-md">E-</span><span class="text-yellow-400 drop-shadow-md">VOTE</span>
                     </h3>
                     <p class="text-lg sm:text-xl font-medium text-blue-100 mb-6">
                         บน PEA Fund+ Mobile Application <br class="hidden sm:block">
@@ -582,14 +582,13 @@
                     
                     <div class="inline-block bg-[#08122a]/50 border border-blue-400/30 rounded-2xl px-6 sm:px-8 py-5 mb-6 shadow-inner">
                         <p class="font-bold text-[#facc15] text-lg sm:text-xl md:text-2xl leading-relaxed tracking-wide">
-                            ตั้งแต่วันที่ 20 มี.ค. 2569 เวลา 08.30 น.<br>
-                            จนถึงวันที่ 31 มี.ค. 2569 เวลา 10.00 น.
+                            ตั้งแต่วันที่ 20 มี.ค.2569 เวลา 08.30 น.<br>
+                            จนถึงวันที่ 31 มี.ค.2569 เวลา 10.00 น.
                         </p>
                     </div>
 
                     <p class="text-sm sm:text-base text-blue-200/90 leading-relaxed max-w-2xl mx-auto font-light">
-                        และประกาศผลการเลือกตั้งในการประชุมใหญ่สามัญประจำปี 2568 กสช.กฟภ.<br>
-                        วันที่ 31 มี.ค. 2569 ณ ห้องประชุมสุวรรณภูมิ ชั้น 6 อาคาร 4 กฟภ. สำนักงานใหญ่
+                        และประกาศผลการเลือกตั้งในการประชุมใหญ่สามัญประจำปี 2568 กสช.กฟภ. วันที่ 31 มี.ค.2569 ณ ห้องประชุมสุวรรณภูมิ ชั้น 6 อาคาร 4 กฟภ. สำนักงานใหญ่
                     </p>
                 </div>
             </div>
@@ -614,10 +613,12 @@
        
        <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-6 text-gradient-blue tracking-wider drop-shadow-sm leading-normal pb-2">ขุนพล สมจิตร</h2>
        
-       <div class="w-full mb-12 sm:mb-16 px-4">
-         <p class="font-heading font-black slogan-text text-[#facc15] italic tracking-wide sm:tracking-widest py-4 drop-shadow-md mx-auto w-full" style="text-shadow: 1px 1px 0px #12285e, -1px -1px 0px #12285e, 1px -1px 0px #12285e, -1px 1px 0px #12285e, 2px 2px 0px rgba(0,0,0,0.5);">
-           "ยืดหยุ่น ปลอดภัย เข้าใจทุกช่วงวัย"
-         </p>
+       <div class="w-full mb-12 sm:mb-16 px-2 sm:px-0">
+         <div class="bg-gradient-blue rounded-[2rem] py-6 px-4 sm:p-8 md:p-12 border border-blue-900/20 shadow-2xl w-full text-center hover:shadow-blue-900/20 transition-all">
+           <p class="font-heading font-black slogan-text text-gradient-gold italic tracking-wide sm:tracking-widest drop-shadow-xl w-full mx-auto py-2">
+             "ยืดหยุ่น ปลอดภัย เข้าใจทุกช่วงวัย"
+           </p>
+         </div>
        </div>
     </div>
   </footer>
