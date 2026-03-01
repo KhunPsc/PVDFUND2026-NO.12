@@ -45,6 +45,8 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      padding-bottom: 0.1em; /* ป้องกันสระล่างขาด */
+      padding-top: 0.1em;
     }
 
     .text-gradient-blue {
@@ -52,6 +54,8 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      padding-bottom: 0.1em; /* ป้องกันสระล่างขาด */
+      padding-top: 0.1em;
     }
 
     .profile-crop {
@@ -98,8 +102,8 @@
               drop-shadow(5px 6px 0px var(--primary-dark))
               drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.4));
       display: inline-block;
-      padding: 0.1em 0.2em; 
-      line-height: 1.1;
+      padding: 0.2em 0.3em; /* เพิ่ม Padding ป้องกันเงาหรือขอบขาด */
+      line-height: 1.2;
     }
 
     .number-3d-gold {
@@ -111,8 +115,8 @@
               drop-shadow(5px 6px 0px #78350f)
               drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.5));
       display: inline-block;
-      padding: 0.1em 0.2em; 
-      line-height: 1.1;
+      padding: 0.2em 0.3em; /* เพิ่ม Padding ป้องกันเงาหรือขอบขาด */
+      line-height: 1.2;
     }
 
     .policy-card {
@@ -126,8 +130,9 @@
     }
 
     .slogan-text {
-      font-size: clamp(0.85rem, 4vw, 4.5rem);
-      line-height: 1.2;
+      font-size: clamp(1.2rem, 3.5vw + 0.5rem, 3.5rem);
+      line-height: 1.4;
+      word-break: keep-all;
     }
     
     /* Responsive iframe container */
@@ -218,7 +223,7 @@
              <h2 class="font-heading font-black italic text-[8rem] sm:text-[10rem] lg:text-[13rem] xl:text-[15rem] number-3d-gold tracking-widest mb-2 sm:mb-4">
                 12
              </h2>
-             <p class="text-4xl sm:text-5xl lg:text-[4rem] xl:text-7xl font-heading font-black leading-tight text-white drop-shadow-md text-center tracking-wider">
+             <p class="text-4xl sm:text-5xl lg:text-[4rem] xl:text-7xl font-heading font-black leading-tight text-white drop-shadow-md text-center tracking-wider py-2">
                 ขุนพล สมจิตร
              </p>
           </div>
@@ -227,8 +232,8 @@
 
       <!-- Bottom Content: Full Width Slogan -->
       <div class="w-full mt-2 sm:mt-8 px-2 sm:px-0">
-        <div class="bg-white/10 backdrop-blur-md rounded-full sm:rounded-[2rem] py-3 px-2 sm:p-8 md:p-12 border border-white/10 shadow-2xl w-full text-center hover:bg-white/15 transition-colors overflow-hidden">
-          <p class="font-heading font-black slogan-text text-gradient-gold italic tracking-tight sm:tracking-widest drop-shadow-xl w-full mx-auto whitespace-nowrap">
+        <div class="bg-white/10 backdrop-blur-md rounded-[2rem] py-6 px-4 sm:p-8 md:p-12 border border-white/10 shadow-2xl w-full text-center hover:bg-white/15 transition-colors">
+          <p class="font-heading font-black slogan-text text-gradient-gold italic tracking-wide sm:tracking-widest drop-shadow-xl w-full mx-auto py-2">
             "ยืดหยุ่น ปลอดภัย เข้าใจทุกช่วงวัย"
           </p>
         </div>
@@ -594,23 +599,23 @@
   </section>
 
   <!-- CTA Footer -->
-  <footer class="py-16 sm:py-24 px-4 sm:px-6 bg-white text-center relative overflow-hidden w-full">
+  <footer class="pt-20 pb-16 px-4 sm:px-6 bg-white text-center relative w-full">
     <div class="w-full max-w-4xl mx-auto relative z-10 px-2 sm:px-4">
        <!-- Large Number Text Display -->
        <div class="w-full flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
-         <span class="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-gradient-blue drop-shadow-sm tracking-widest uppercase mb-2">
+         <span class="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-gradient-blue drop-shadow-sm tracking-widest uppercase mb-2 py-2 leading-normal block">
            หมายเลข
          </span>
          <!-- 3D Massive Number -->
-         <span class="font-heading font-black italic number-3d-blue text-[10rem] sm:text-[14rem] md:text-[18rem] tracking-widest hover:scale-105 transition-transform duration-500 cursor-default ml-4 sm:ml-6">
+         <span class="font-heading font-black italic number-3d-blue text-[8rem] sm:text-[12rem] md:text-[16rem] tracking-widest hover:scale-105 transition-transform duration-500 cursor-default ml-2 sm:ml-4 leading-none py-4 block">
            12
          </span>
        </div>
        
-       <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-6 text-[#12285e] tracking-wider drop-shadow-sm">ขุนพล สมจิตร</h2>
+       <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-6 text-gradient-blue tracking-wider drop-shadow-sm leading-normal pb-2">ขุนพล สมจิตร</h2>
        
-       <div class="w-full mb-12 sm:mb-16 overflow-hidden px-2">
-         <p class="font-heading font-black slogan-text text-[#facc15] italic tracking-tight sm:tracking-widest py-2 drop-shadow-md mx-auto whitespace-nowrap filter drop-shadow(2px 2px 0px rgba(0,0,0,0.8)) text-shadow" style="text-shadow: 1px 1px 0px #12285e, -1px -1px 0px #12285e, 1px -1px 0px #12285e, -1px 1px 0px #12285e;">
+       <div class="w-full mb-12 sm:mb-16 px-4">
+         <p class="font-heading font-black slogan-text text-[#facc15] italic tracking-wide sm:tracking-widest py-4 drop-shadow-md mx-auto w-full" style="text-shadow: 1px 1px 0px #12285e, -1px -1px 0px #12285e, 1px -1px 0px #12285e, -1px 1px 0px #12285e, 2px 2px 0px rgba(0,0,0,0.5);">
            "ยืดหยุ่น ปลอดภัย เข้าใจทุกช่วงวัย"
          </p>
        </div>
