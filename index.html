@@ -10,10 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1e3a8a; /* Modern Blue */
-      --primary-dark: #0f172a; /* Deep Slate */
-      --secondary: #f59e0b; /* Amber/Gold */
-      --secondary-light: #fcd34d;
+      /* ปรับสีน้ำเงินให้ตรงกับโทนตามรูป (กรมท่า) */
+      --primary: #12285e; 
+      --primary-dark: #08122a; 
+      --secondary: #facc15; /* สีเหลืองทอง */
+      --secondary-light: #fef08a;
       --accent: #e0f2fe;
     }
     
@@ -32,7 +33,7 @@
     }
 
     .bg-gradient-blue {
-      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     }
 
     .bg-gradient-gold {
@@ -47,7 +48,7 @@
     }
 
     .text-gradient-blue {
-      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -59,9 +60,9 @@
     }
 
     .policy-tab-active {
-      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
-      box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+      box-shadow: 0 4px 15px rgba(18, 40, 94, 0.3);
     }
 
     .scroll-smooth {
@@ -89,16 +90,15 @@
 
     /* 3D Embossed Text Effects */
     .number-3d-blue {
-      background: linear-gradient(135deg, #60a5fa 0%, #1e40af 50%, #1e3a8a 100%);
+      background: linear-gradient(135deg, #60a5fa 0%, var(--primary) 50%, var(--primary-dark) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      /* สร้างเงานูน: ไฮไลท์สีขาวด้านบนซ้าย, สันนูนสีเข้มด้านขวาล่าง, และเงาตกกระทบ */
       filter: drop-shadow(-2px -2px 0px rgba(255,255,255,0.3))
-              drop-shadow(5px 6px 0px #0f172a)
+              drop-shadow(5px 6px 0px var(--primary-dark))
               drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.4));
       display: inline-block;
-      padding: 0.1em 0.2em; /* ป้องกันปัญหาตัวอักษรตกขอบ */
+      padding: 0.1em 0.2em; 
       line-height: 1.1;
     }
 
@@ -111,24 +111,44 @@
               drop-shadow(5px 6px 0px #78350f)
               drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.5));
       display: inline-block;
-      padding: 0.1em 0.2em; /* ป้องกันปัญหาตัวอักษรตกขอบ */
+      padding: 0.1em 0.2em; 
       line-height: 1.1;
     }
 
     .policy-card {
       transition: all 0.3s ease;
-      border: 1px solid rgba(30, 58, 138, 0.05);
+      border: 1px solid rgba(18, 40, 94, 0.05);
     }
 
     .policy-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(30, 58, 138, 0.1);
+      box-shadow: 0 15px 30px rgba(18, 40, 94, 0.1);
     }
 
-    /* Slogan Responsive Text Scaling - Adjusted minimum size for small mobiles */
     .slogan-text {
       font-size: clamp(0.85rem, 4vw, 4.5rem);
       line-height: 1.2;
+    }
+    
+    /* Responsive iframe container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
@@ -145,9 +165,10 @@
         </div>
       </div>
       <div class="flex gap-4 sm:gap-6 text-xs sm:text-sm font-medium">
-        <a href="#about" class="text-slate-600 hover:text-[#1e3a8a] transition-colors tracking-wide">เกี่ยวกับ</a>
-        <a href="#policies" class="text-slate-600 hover:text-[#1e3a8a] transition-colors tracking-wide">นโยบาย</a>
-        <a href="#achievements" class="text-slate-600 hover:text-[#1e3a8a] transition-colors tracking-wide">ผลงาน</a>
+        <a href="#about" class="text-slate-600 hover:text-[#12285e] transition-colors tracking-wide">เกี่ยวกับ</a>
+        <a href="#policies" class="text-slate-600 hover:text-[#12285e] transition-colors tracking-wide">นโยบาย</a>
+        <a href="#achievements" class="text-slate-600 hover:text-[#12285e] transition-colors tracking-wide">ผลงาน</a>
+        <a href="#voting" class="text-[#f59e0b] font-bold hover:text-amber-600 transition-colors tracking-wide">ลงคะแนน</a>
       </div>
     </div>
   </nav>
@@ -177,7 +198,7 @@
             <div class="w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20 bg-white/10">
               <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_Gi6-YYdFw2QQ0sL55sJZ4CyU6dMrHZuL3r13TjOS0bQf-8fGjkHI_ZMZqGv21HzmNoA1Z8sTNErqJGfuyUzkMM9FnxwdXsCqV0Cr0tK9IlHmRfyLNrRIu7QkxlJo5uKvSTf9jTuOBg6nMffCI17pVXqIlvGy3DG3Sy3e_spSzYsS8mnpE1JwWWcXcGjv2mUyjIxCiTSiLn5tmeOUKUazRLtpXTRZsXtAARRXsxO5uloSxuBESWwTN3bpmQ4Snu5ICKhEsWYhneqWyByM4x-koBR5SRaewlGJSuqdIqpc67ZXNm_YR6fE47JOdG6YlrQZJgoqXCT-SFZuZcN122qF4jZME59fThED1nJU76Mn5AR6aCg89MkOdk9zY3XORPyyI89esbnouhshM_n3Kaeny0dPZjsMMJK808F4xwCc8lbiKmUOA13B4U6s9_aqHxVCmDEH7CKc9stcmJrB_vAoZKa-50uL67mwFhC4Rv602LRP2wxWgh-xk0E5LvKyabXVjU68HWYEti5DH1VpfWPzJYZM5um5KfrWoCjwVSMJmgxbMCqJa9VC3veXtSx3gs7gYvQNv1LJbJBAuG9wJ3kgQPEZPboyPKd78XeICuOH3INy1J31RD43Gnuzkqd5rXeiE6kGG86u2HSA3i3tZD3xK9u0svmv0TKnudrc2CQaJvlp8TxizhFKs3ApOiEUSu5gRuOMSj9lxG1qg8fF_STBlVIg_hbPpwheAG0Zq2rLPlKgu1jw3wD9L0jesWpWP1fsOS_1Vl0TRhAtUn4q2QVmqepZbG4p4_qerWYYM4ZCiLZ2eqMlnhr8Rq3we8OCkJm7qJRKCmatcqp9oOUruBlfrhIlgbixikGAZlaJ4zcXU71hESxMnIJvgduIfjn9xoYKRFxRrzRoTMi8YK5zWo7o-MzrS97yfZlepfa6xA-rpw_MXcmkKZaraKcQ2f7W8r2Q6URNyHd7Y3LXkySknVUJv6CXeOVryHNNv54dTDYmKZwSrUPuBmW3qdx-Hq8Rsbmsn3jOcuhiXAYCrQ1K7hIWHbEqyx3xCmHWzlm4ZdA3TFCco981YCFKfE7v81Ro94CChJoNs=w1125-h1047?auditContext=forDisplay" 
                    alt="ขุนพล สมจิตร" 
-                   class="w-full h-full profile-crop">
+                   class="w-full h-full profile-crop bg-slate-200">
             </div>
           </div>
         </div>
@@ -193,7 +214,7 @@
           
           <div class="flex flex-col items-center w-full">
              <p class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-none drop-shadow-md mb-0 tracking-wider">หมายเลข</p>
-             <!-- 3D Massive Number with extra spacing -->
+             <!-- 3D Massive Number -->
              <h2 class="font-heading font-black italic text-[8rem] sm:text-[10rem] lg:text-[13rem] xl:text-[15rem] number-3d-gold tracking-widest mb-2 sm:mb-4">
                 12
              </h2>
@@ -206,9 +227,7 @@
 
       <!-- Bottom Content: Full Width Slogan -->
       <div class="w-full mt-2 sm:mt-8 px-2 sm:px-0">
-        <!-- Changed rounded size and padding to fit nicely on mobile -->
         <div class="bg-white/10 backdrop-blur-md rounded-full sm:rounded-[2rem] py-3 px-2 sm:p-8 md:p-12 border border-white/10 shadow-2xl w-full text-center hover:bg-white/15 transition-colors overflow-hidden">
-          <!-- Added tracking-tight for mobile so it fits in one line, then tracking-widest on sm screens -->
           <p class="font-heading font-black slogan-text text-gradient-gold italic tracking-tight sm:tracking-widest drop-shadow-xl w-full mx-auto whitespace-nowrap">
             "ยืดหยุ่น ปลอดภัย เข้าใจทุกช่วงวัย"
           </p>
@@ -227,22 +246,25 @@
           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-blue text-white rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
             <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-[#1e3a8a] mb-2 uppercase tracking-widest">สังกัด</h3>
+          <h3 class="font-heading font-bold text-lg sm:text-xl text-[#12285e] mb-2 uppercase tracking-widest">สังกัด</h3>
           <p class="text-slate-600 font-medium tracking-wide">การไฟฟ้าส่วนภูมิภาค สาขาจอมทอง</p>
         </div>
         <div class="p-6 sm:p-8 bg-slate-50 rounded-[2rem] border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-blue text-white rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
             <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-[#1e3a8a] mb-2 uppercase tracking-widest">ตำแหน่ง</h3>
+          <h3 class="font-heading font-bold text-lg sm:text-xl text-[#12285e] mb-2 uppercase tracking-widest">ตำแหน่ง</h3>
           <p class="text-slate-600 font-medium tracking-wide">นักบริหารงานทั่วไป ระดับ 6</p>
         </div>
         <div class="p-6 sm:p-8 bg-slate-50 rounded-[2rem] border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1 group sm:col-span-2 lg:col-span-1">
           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-blue text-white rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477-4.5 1.253" /></svg>
           </div>
-          <h3 class="font-heading font-bold text-lg sm:text-xl text-[#1e3a8a] mb-2 uppercase tracking-widest">การศึกษา</h3>
-          <p class="text-slate-600 font-medium tracking-wide">ปริญญาโทด้านการเงิน (MSc.Finance) มหาวิทยาลัยเชียงใหม่ (อยู่ระหว่างยื่นจบการศึกษา)</p>
+          <h3 class="font-heading font-bold text-lg sm:text-xl text-[#12285e] mb-2 uppercase tracking-widest">การศึกษา</h3>
+          <p class="text-slate-600 font-medium tracking-wide">
+            ปริญญาโทด้านการเงิน (MSc.Finance) <br>
+            <span class="text-black font-bold">มหาวิทยาลัยเชียงใหม่</span> (อยู่ระหว่างยื่นจบการศึกษา)
+          </p>
         </div>
       </div>
     </div>
@@ -253,16 +275,16 @@
     <div class="max-w-6xl mx-auto w-full">
       <h2 class="font-heading font-black text-2xl sm:text-3xl text-gradient-blue section-title mb-10 sm:mb-12 tracking-wider">นโยบายขับเคลื่อนเพื่อสมาชิก</h2>
       
-      <!-- Policy Display Area (All Visible) -->
+      <!-- Policy Display Area -->
       <div class="grid grid-cols-1 gap-8">
         
         <!-- New Members -->
-        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-blue-900/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner">🌱</div>
+        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-[#12285e]/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner border border-blue-100">🌱</div>
           <div class="text-left flex-1">
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-slate-800 mb-6 underline decoration-blue-400 decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใหม่</h3>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-6 underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใหม่</h3>
             <div class="space-y-4">
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-500 hover:bg-white transition-colors">
+              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-[#12285e] hover:bg-white transition-colors">
                 <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-blue rounded-full flex items-center justify-center text-white shrink-0 mt-1 shadow-md text-xs sm:text-sm">✓</div>
                 <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">สับเปลี่ยนรูปแบบการลงทุนฟรีไม่จำกัดจำนวนครั้งใน 2 ปีแรก (24 งวด) เพื่อส่งเสริมให้พนักงานใหม่ได้ลองผิด ลองถูกด้วยตัวเอง เสริมสร้าง Mindset ในการลงทุนและการบริหารจัดการเงิน</p>
               </div>
@@ -271,12 +293,12 @@
         </div>
 
         <!-- Current Members -->
-        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-blue-900/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner">👥</div>
+        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-[#12285e]/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner border border-blue-100">👥</div>
           <div class="text-left flex-1">
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-slate-800 mb-6 underline decoration-blue-500 decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกปัจจุบัน</h3>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-6 underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกปัจจุบัน</h3>
             <div class="space-y-4">
-              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-500 hover:bg-white transition-colors">
+              <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-[#12285e] hover:bg-white transition-colors">
                 <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-blue rounded-full flex items-center justify-center text-white shrink-0 mt-1 shadow-md text-xs sm:text-sm">✓</div>
                 <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">ปรับสัดส่วนการลงทุนแบบแยกส่วน (Flexible Dual-Track Investment) ให้สมาชิกสามารถแยกสัดส่วนเงินหักรายเดือนไว้รอลงทุนในจังหวะที่เหมาะสมได้</p>
               </div>
@@ -285,14 +307,14 @@
         </div>
 
         <!-- Retiring Members -->
-        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-blue-900/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner">🏖️</div>
+        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl shadow-[#12285e]/5 border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start transition-transform duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0 text-2xl sm:text-3xl shadow-inner border border-amber-100">🏖️</div>
           <div class="text-left flex-1">
-            <h3 class="font-heading font-black text-xl sm:text-2xl text-slate-800 mb-6 underline decoration-amber-400 decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใกล้เกษียณ / เกษียณแล้ว</h3>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-6 underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">สำหรับสมาชิกใกล้เกษียณ / เกษียณแล้ว</h3>
             <div class="space-y-4">
               <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors">
                 <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
-                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">เสนอเพิ่ม “นโยบายกองทุนตั้งรับ (เงินฝาก+ตราสารหนี้ระยะสั้น)” (Safety Net Fund) เน้นบริหารจัดการกองทุนตราสารหนี้ระยะสั้นที่ผันผวนต่ำมาก เพื่อเป็นที่พักเงิน ให้เงินต้นปลอดภัยไม่ติดลบ</p>
+                <p class="font-medium text-slate-700 leading-relaxed text-base sm:text-lg tracking-wide">เสนอเพิ่ม “นโยบายกองทุนตั้งรับ (เงินฝาก+ตราสารหนี้ระยะสั้น)” (Safety Net Fund) เน้นบริหารจัดการเงินฝากและกองทุนตราสารหนี้ระยะสั้นที่ผันผวนต่ำมาก เพื่อเป็นที่พักเงิน <span class="text-[#12285e] font-bold">ให้เงินต้นปลอดภัยไม่ติดลบ เหมาะสำหรับผู้ที่ใกล้เกษียณที่ไม่ต้องการแบกรับความเสี่ยงจากการผันผวนที่อาจเกิดขึ้นในช่วงที่สมาชิกกำลังจะเกษียณ</span></p>
               </div>
               <div class="flex items-start gap-4 p-5 sm:p-6 bg-slate-50 rounded-2xl border-l-4 border-amber-400 hover:bg-white transition-colors">
                 <div class="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-gold rounded-full flex items-center justify-center text-[#0f172a] shrink-0 mt-1 font-black shadow-md text-xs sm:text-sm">✓</div>
@@ -309,40 +331,40 @@
       </div>
 
       <!-- Other Policies Grid -->
-      <h3 class="font-heading font-black text-xl sm:text-2xl text-[#1e3a8a] mt-12 sm:mt-16 mb-6 sm:mb-8 text-center md:text-left underline decoration-[#fcd34d] decoration-4 underline-offset-8 tracking-wide">นโยบายอื่น ๆ</h3>
+      <h3 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mt-12 sm:mt-16 mb-6 sm:mb-8 text-center md:text-left underline decoration-[#facc15] decoration-4 underline-offset-8 tracking-wide">นโยบายอื่น ๆ</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">🎮</div>
+        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm border-t-2 border-[#12285e]/10">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-blue-800 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">🎮</div>
           <div>
-            <h4 class="font-bold text-slate-800 mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">Virtual Portfolio & Copy Investment</h4>
+            <h4 class="font-bold text-[#12285e] mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">Virtual Portfolio</h4>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed tracking-wide">สนามจำลองการลงทุนให้สมาชิกและพนักงานใหม่เรียนรู้และทดสอบกลยุทธ์การลงทุน โดยปราศจากความเสี่ยง</p>
           </div>
         </div>
-        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">🤖</div>
+        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm border-t-2 border-[#12285e]/10">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-indigo-50 text-indigo-800 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">🤖</div>
           <div>
-            <h4 class="font-bold text-slate-800 mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">AI Financial Planning</h4>
+            <h4 class="font-bold text-[#12285e] mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">AI Financial Planning</h4>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed tracking-wide">ใช้ AI (Deep Learning Models) ช่วยพยากรณ์ราคาและทิศทางตลาดเพื่อบริหารความเสี่ยงประกอบการตัดสินใจ</p>
           </div>
         </div>
-        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">📊</div>
+        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm border-t-2 border-[#12285e]/10">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-blue-800 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">📊</div>
           <div>
-            <h4 class="font-bold text-slate-800 mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">Recovery Plan Oversight</h4>
+            <h4 class="font-bold text-[#12285e] mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">Recovery Plan Oversight</h4>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed tracking-wide">หากผลงานต่ำกว่าเกณฑ์ติดต่อกัน 2 ไตรมาส ต้องเรียก บลจ. มาชี้แจงแผนปรับพอร์ต (Recovery Plan) ทันที</p>
           </div>
         </div>
-        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm">
+        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm border-t-2 border-[#12285e]/10">
           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">💰</div>
           <div>
-            <h4 class="font-bold text-slate-800 mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">Performance-Based Fee</h4>
+            <h4 class="font-bold text-[#12285e] mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">Performance-Based Fee</h4>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed tracking-wide">ศึกษาการปรับสัญญาจ้าง บลจ. ให้ค่าธรรมเนียมแปรผันตามผลตอบแทนเพื่อสร้างแรงจูงใจในการบริหารพอร์ต</p>
           </div>
         </div>
-        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">🔄</div>
+        <div class="policy-card bg-white p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] flex gap-4 sm:gap-5 items-start shadow-sm md:col-span-2 lg:col-span-1 border-t-2 border-[#12285e]/10">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-50 text-purple-800 rounded-2xl flex items-center justify-center shrink-0 shadow-inner text-xl sm:text-2xl">🔄</div>
           <div>
-            <h4 class="font-bold text-slate-800 mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">ระบบแชร์กลยุทธ์(แผน)การลงทุนระหว่างสมาชิก</h4>
+            <h4 class="font-bold text-[#12285e] mb-1 sm:mb-2 text-base sm:text-lg tracking-wide">ระบบแชร์กลยุทธ์(แผน)การลงทุนระหว่างสมาชิก</h4>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed tracking-wide">สร้างพื้นที่ให้สมาชิกสามารถแบ่งปันกลยุทธ์ และรูปแบบการลงทุน ให้กับเพื่อนสมาชิกได้ติดตามเปลี่ยนแผนการลงทุนตามได้ (Follow Switching Plan)</p>
           </div>
         </div>
@@ -358,23 +380,22 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
         <!-- CFA Achievement Card -->
         <div class="group relative">
-          <h3 class="font-heading font-bold text-[#1e3a8a] mb-6 flex items-center gap-3 text-lg sm:text-xl tracking-wide">
+          <h3 class="font-heading font-bold text-[#12285e] mb-6 flex items-center gap-3 text-lg sm:text-xl tracking-wide">
             <span class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-gold text-[#0f172a] rounded-xl flex items-center justify-center shadow-md text-sm sm:text-base">🏆</span>
             หน่วยงานภายนอก (CFA Institute)
           </h3>
-          <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-xl transition-all hover:shadow-2xl">
-            <div class="w-full bg-slate-100 overflow-hidden border-b border-slate-100 relative flex justify-center items-center">
+          <div class="bg-slate-50 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-xl transition-all hover:shadow-2xl">
+            <div class="w-full bg-white overflow-hidden border-b border-slate-100 relative flex justify-center items-center">
                <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_EpWRw8HR1YgjGpVlG7dTB5K-IILZPB8PWeUY9F3Y4aiOa9kZbgyq5zrZk55J3MGy6mhlbggr1K5YJaBUuuMD6YrnHp9LQSnhCiUklv0Pu92WivBOHxNB9h_EGK1sxyY96Eg4aAZOuZgZtwXfdtCZQY4CoD0xITSIi445qkSlMNkK3G4mIcqaangCNDtwMFzS0uuWIUicqXSXVTLjQSuvPJFiV-51UaDtL5XhdO3jpMzI7mslCDXt3UiYwtj6mlBE7PLjeY2hlv3QbH3ZTUVdTf6uhQDd6zIJ2GY372B0SbAvDAFQ-_Jm-qR2S8_IIDXVjKhQjaNeelnpecgoAwBjbtchhzLVPkfPHDawT-rkNiJkZPpoIP77eofVIbzGYUhYhvtWIvtl04_SzOj1XpaVobih_M-0eOr8nUG_AU5lsEqXlZo-d8AUrmcODeEL7nL1AFE7ODS-Hp8xoUu5TBOAFtWndDh0Xn4qS_b-fi2Cs2YNNJLmUnuHzQNJL8Ha_dq6Qc7b1MW9VY69c_GCRqYDcfn2FzPf9P8jEEgModMAy94CAB1No1OQuJxN4PFJjtAwdp5b0hmTJQ2jImMgBAWMunz3mcO9CgtMuMjH3hmsNb7S720LAr4F0RWnYlcmfDHTFh_gDumRo-5GJ1dLoqCgDnoforUK2xTYbXQkcLxXoWcOUsrnphn3du7mabJXgnQkdQ7-AoPtCnyD10G810CB9ikg-ejA9HX6CrT3VBLs4R6cqt8quHjm9mpvCKPtDqFrRHChuWSG3C7CPOjpBhJGyt_u6kr7HgpyUJQbsHRZP27wszbImV5gzo0ZBwTU1ERjQxH5juE2xzpxO7Xss-vOqQmdnonzNyhgmaL3zDcNBpq5AQ5fHFBhtgGVlxp1V8wLGYYs6kb0Kb1mcNgclzqFElueO9cy2dEOik2GYGZEGbGOLV-86-tv5kmaEUo5PHNBn1DzON-doP9PUTRoH-zZx1KK2hdhnhABig8nAOCLnjz_dVBuuNZM5hPMJpDr9rBDGc27UCu0o0zUm13USLxCdwQ1b3R4q2enrhLB8-BGnB5i8jixIC2CrtUf-5_PFqtI-cFw=w1125-h1047?auditContext=forDisplay" 
                     alt="CFA Institute Research Challenge 2023-2024" 
                     class="w-full h-auto max-h-[450px] object-contain group-hover:scale-105 transition-transform duration-700 bg-white">
-               <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
             </div>
             <div class="p-6 sm:p-8 relative">
-              <h4 class="font-heading font-black text-xl sm:text-2xl text-[#1e3a8a] mb-2 leading-tight tracking-wide">Outstanding Investment Research</h4>
-              <p class="text-gradient-gold font-black uppercase text-xs sm:text-sm tracking-widest mb-5">Semi Final Round</p>
-              <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-slate-50 border border-slate-100 rounded-2xl">
+              <h4 class="font-heading font-black text-xl sm:text-2xl text-[#12285e] mb-2 leading-tight tracking-wide">Outstanding Investment Research</h4>
+              <p class="text-amber-600 font-black uppercase text-xs sm:text-sm tracking-widest mb-5">Semi Final Round</p>
+              <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-slate-200 shadow-sm rounded-2xl">
                  <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-blue rounded-xl flex items-center justify-center text-white font-bold shrink-0 shadow-inner text-sm sm:text-base">CFA</div>
-                 <p class="text-slate-600 text-xs sm:text-sm font-medium tracking-wide">CFA Institute Research Challenge 2023-2024</p>
+                 <p class="text-slate-700 text-xs sm:text-sm font-medium tracking-wide">CFA Institute Research Challenge 2023-2024</p>
               </div>
             </div>
           </div>
@@ -382,31 +403,31 @@
 
         <!-- Internal Achievements List -->
         <div>
-          <h3 class="font-heading font-bold text-[#1e3a8a] mb-6 flex items-center gap-3 text-lg sm:text-xl tracking-wide">
+          <h3 class="font-heading font-bold text-[#12285e] mb-6 flex items-center gap-3 text-lg sm:text-xl tracking-wide">
             <span class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-blue text-white rounded-xl flex items-center justify-center shadow-md text-sm sm:text-base">💡</span>
             นวัตกรรมและผลงานในองค์กร
           </h3>
           <div class="space-y-4 sm:space-y-5">
-            <div class="p-6 sm:p-8 bg-gradient-to-br from-slate-50 to-white rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200 shadow-xl relative overflow-hidden group">
-               <div class="absolute -top-10 -right-10 w-32 h-32 sm:w-48 sm:h-48 bg-blue-50 rounded-full group-hover:scale-110 transition-transform"></div>
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-white to-slate-50 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200 shadow-xl relative overflow-hidden group">
+               <div class="absolute -top-10 -right-10 w-32 h-32 sm:w-48 sm:h-48 bg-blue-50 rounded-full group-hover:scale-110 transition-transform opacity-50"></div>
                <div class="relative z-10">
                  <span class="inline-block px-3 sm:px-4 py-1.5 bg-gradient-gold text-[#0f172a] text-[9px] sm:text-[10px] font-black uppercase tracking-widest rounded-lg mb-4 shadow-md">🏆 ชนะเลิศอันดับ 1</span>
-                 <h4 class="font-heading font-black text-xl sm:text-2xl mb-2 text-[#1e3a8a] tracking-wide">เลขา จี : AI Chatbot</h4>
+                 <h4 class="font-heading font-black text-xl sm:text-2xl mb-2 text-[#12285e] tracking-wide">เลขา จี : AI Chatbot</h4>
                  <p class="text-slate-500 text-xs sm:text-sm italic mb-4 font-semibold tracking-wide">ผู้ช่วยงานจัดซื้อจัดจ้าง (Process Improvement) • นวัตกรรม กฟน.1 ปี 2025</p>
                  <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-medium tracking-wide">เพิ่มประสิทธิภาพงานพัสดุผ่าน AI Technology</p>
                </div>
             </div>
-            <div class="p-5 sm:p-6 bg-slate-50 rounded-[1.5rem] sm:rounded-[2rem] border border-slate-100 flex gap-4 sm:gap-5 items-center hover:bg-white hover:shadow-md transition-all">
-               <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl sm:text-3xl border border-slate-50 shrink-0">🤖</div>
+            <div class="p-5 sm:p-6 bg-slate-50 rounded-[1.5rem] sm:rounded-[2rem] border border-slate-200 shadow-sm flex gap-4 sm:gap-5 items-center hover:bg-white hover:shadow-md transition-all">
+               <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-2xl sm:text-3xl border border-slate-100 shrink-0">🤖</div>
                <div>
-                  <h4 class="font-bold text-[#1e3a8a] text-base sm:text-lg tracking-wide">น้องจอมทอง : AI Chatbot</h4>
+                  <h4 class="font-bold text-[#12285e] text-base sm:text-lg tracking-wide">น้องจอมทอง : AI Chatbot</h4>
                   <p class="text-slate-500 text-xs sm:text-sm mt-1 tracking-wide">ผู้ช่วยเสมือนบน Facebook Page การไฟฟ้าส่วนภูมิภาคสาขาจอมทอง</p>
                </div>
             </div>
-            <div class="p-5 sm:p-6 bg-slate-50 rounded-[1.5rem] sm:rounded-[2rem] border border-slate-100 flex gap-4 sm:gap-5 items-center hover:bg-white hover:shadow-md transition-all">
-               <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl sm:text-3xl border border-slate-50 shrink-0">📝</div>
+            <div class="p-5 sm:p-6 bg-slate-50 rounded-[1.5rem] sm:rounded-[2rem] border border-slate-200 shadow-sm flex gap-4 sm:gap-5 items-center hover:bg-white hover:shadow-md transition-all">
+               <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-2xl sm:text-3xl border border-slate-100 shrink-0">📝</div>
                <div>
-                  <h4 class="font-bold text-[#1e3a8a] text-base sm:text-lg tracking-wide">PEACON 2025</h4>
+                  <h4 class="font-bold text-[#12285e] text-base sm:text-lg tracking-wide">PEACON 2025</h4>
                   <p class="text-slate-500 text-xs sm:text-sm mt-1 tracking-wide">บทความวิชาการด้าน Work/Process Improvement</p>
                </div>
             </div>
@@ -417,83 +438,79 @@
   </section>
 
   <!-- Expertise Section -->
-  <section id="expertise" class="py-16 sm:py-24 px-4 sm:px-6 bg-[#0f172a] text-white relative overflow-hidden w-full">
-    <!-- Background Decor Gradients -->
-    <div class="absolute top-0 left-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-blue-600/20 blur-[80px] sm:blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-amber-500/10 blur-[80px] sm:blur-[120px] rounded-full pointer-events-none"></div>
-
+  <section id="expertise" class="py-16 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden w-full border-t border-slate-100">
     <div class="max-w-6xl mx-auto relative z-10 w-full">
-      <h2 class="font-heading font-black text-2xl sm:text-3xl mb-12 sm:mb-16 flex items-center gap-3 sm:gap-4 tracking-wider">
+      <h2 class="font-heading font-black text-2xl sm:text-3xl mb-12 sm:mb-16 flex items-center gap-3 sm:gap-4 tracking-wider text-[#12285e]">
         <span class="w-2 sm:w-3 h-8 sm:h-10 bg-gradient-gold rounded-full"></span>
-        <span class="text-transparent bg-clip-text bg-white">ความเชี่ยวชาญ (Expertise)</span>
+        <span>ความเชี่ยวชาญ (Expertise)</span>
       </h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
         
         <!-- Finance Skills -->
-        <div class="space-y-6 bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] backdrop-blur-sm">
-           <h3 class="font-heading font-bold text-xl sm:text-2xl text-gradient-gold mb-6 sm:mb-8 flex items-center gap-3 tracking-wide">
+        <div class="space-y-6 bg-slate-50 border border-slate-200 shadow-lg p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem]">
+           <h3 class="font-heading font-bold text-xl sm:text-2xl text-[#12285e] mb-6 sm:mb-8 flex items-center gap-3 tracking-wide border-b border-slate-200 pb-4">
              <span class="text-xl sm:text-2xl">📈</span> การเงินและเศรษฐกิจ
            </h3>
            <div class="grid grid-cols-1 gap-4 sm:gap-5">
               <div class="flex items-start gap-3 sm:gap-4 group">
-                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-gradient-gold group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.6)] shrink-0"></div>
-                <span class="text-slate-300 font-medium tracking-wide text-base sm:text-lg">เศรษฐศาสตร์มหภาค (Macro Economic)</span>
+                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(245,158,11,0.5)] shrink-0"></div>
+                <span class="text-slate-700 font-medium tracking-wide text-base sm:text-lg">เศรษฐศาสตร์มหภาค (Macro Economic)</span>
               </div>
               <div class="flex items-start gap-3 sm:gap-4 group">
-                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-gradient-gold group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.6)] shrink-0"></div>
-                <span class="text-slate-300 font-medium tracking-wide text-base sm:text-lg">การวิเคราะห์ธุรกิจและรายงานทางการเงิน (Business & Financial Statement Analysis)</span>
+                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(245,158,11,0.5)] shrink-0"></div>
+                <span class="text-slate-700 font-medium tracking-wide text-base sm:text-lg">การวิเคราะห์ธุรกิจและรายงานทางการเงิน (Business & Financial Statement Analysis)</span>
               </div>
               <div class="flex items-start gap-3 sm:gap-4 group">
-                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-gradient-gold group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.6)] shrink-0"></div>
-                <span class="text-slate-300 font-medium tracking-wide text-base sm:text-lg">การวิเคราะห์การลงทุน (Investment Analysis)</span>
+                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(245,158,11,0.5)] shrink-0"></div>
+                <span class="text-slate-700 font-medium tracking-wide text-base sm:text-lg">การวิเคราะห์การลงทุน (Investment Analysis)</span>
               </div>
               <div class="flex items-start gap-3 sm:gap-4 group">
-                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-gradient-gold group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.6)] shrink-0"></div>
-                <span class="text-slate-300 font-medium tracking-wide text-base sm:text-lg">ทฤษฎีทางการเงิน (Financial Theories)</span>
+                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(245,158,11,0.5)] shrink-0"></div>
+                <span class="text-slate-700 font-medium tracking-wide text-base sm:text-lg">ทฤษฎีทางการเงิน (Financial Theories)</span>
               </div>
               <div class="flex items-start gap-3 sm:gap-4 group">
-                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-gradient-gold group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.6)] shrink-0"></div>
-                <span class="text-slate-300 font-medium tracking-wide text-base sm:text-lg">เทคโนโลยีการเงิน (Financial Technology)</span>
+                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(245,158,11,0.5)] shrink-0"></div>
+                <span class="text-slate-700 font-medium tracking-wide text-base sm:text-lg">เทคโนโลยีการเงิน (Financial Technology)</span>
               </div>
               <div class="flex items-start gap-3 sm:gap-4 group">
-                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-gradient-gold group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.6)] shrink-0"></div>
-                <span class="text-slate-300 font-medium tracking-wide text-base sm:text-lg">การเขียนโปรแกรมทางการเงิน (Financial Programming)</span>
+                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 mt-1.5 rounded-full bg-amber-400 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(245,158,11,0.5)] shrink-0"></div>
+                <span class="text-slate-700 font-medium tracking-wide text-base sm:text-lg">การเขียนโปรแกรมทางการเงิน (Financial Programming)</span>
               </div>
            </div>
         </div>
 
         <!-- Tech Skills -->
         <div class="space-y-8">
-           <div class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] backdrop-blur-sm">
-             <h3 class="font-heading font-bold text-xl sm:text-2xl text-gradient-gold mb-6 flex items-center gap-3 tracking-wide">
+           <div class="bg-slate-50 border border-slate-200 shadow-lg p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem]">
+             <h3 class="font-heading font-bold text-xl sm:text-2xl text-[#12285e] mb-6 flex items-center gap-3 tracking-wide border-b border-slate-200 pb-4">
                <span class="text-xl sm:text-2xl">💻</span> เทคโนโลยีและปัญญาประดิษฐ์
              </h3>
              <div class="grid grid-cols-1 gap-4">
-                <div class="p-4 sm:p-5 bg-black/20 rounded-2xl flex gap-3 sm:gap-4 items-start border border-white/5">
+                <div class="p-4 sm:p-5 bg-white rounded-2xl flex gap-3 sm:gap-4 items-start border border-slate-200 shadow-sm">
                    <div class="text-xl sm:text-2xl mt-1 shrink-0">🧠</div>
-                   <span class="text-slate-200 font-medium leading-relaxed tracking-wide text-sm sm:text-base">Integration of Machine Learning & Deep Learning in Financial Application</span>
+                   <span class="text-slate-700 font-medium leading-relaxed tracking-wide text-sm sm:text-base">Integration of Machine Learning & Deep Learning in Financial Application</span>
                 </div>
-                <div class="p-4 sm:p-5 bg-black/20 rounded-2xl flex gap-3 sm:gap-4 items-center border border-white/5">
+                <div class="p-4 sm:p-5 bg-white rounded-2xl flex gap-3 sm:gap-4 items-center border border-slate-200 shadow-sm">
                    <div class="text-xl sm:text-2xl shrink-0">⚙️</div>
-                   <span class="text-slate-200 font-medium tracking-wide text-sm sm:text-base">AI & Automation</span>
+                   <span class="text-slate-700 font-medium tracking-wide text-sm sm:text-base">AI & Automation</span>
                 </div>
              </div>
            </div>
 
            <!-- Research Spotlight -->
-           <div class="p-6 sm:p-8 bg-gradient-hero rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/5 rounded-full -mr-8 -mt-8 sm:-mr-10 sm:-mt-10 blur-xl"></div>
+           <div class="p-6 sm:p-8 bg-gradient-blue rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl relative overflow-hidden text-white">
+              <div class="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full -mr-8 -mt-8 sm:-mr-10 sm:-mt-10 blur-xl"></div>
               <span class="inline-block px-3 sm:px-4 py-1.5 bg-gradient-gold text-[#0f172a] text-[9px] sm:text-[10px] font-black uppercase tracking-widest rounded-lg mb-4 sm:mb-6 shadow-md">
                  หัวข้อการค้นคว้าอิสระ (IS) ป.โท ด้านการเงิน
               </span>
               <h4 class="font-heading font-black text-xl sm:text-2xl mb-2 sm:mb-3 text-white italic leading-relaxed tracking-wide">การประยุกต์ตัวแบบการเรียนรู้เชิงลึกเพื่อคาดการณ์ราคาหลักทรัพย์ใน SET50</h4>
               <p class="text-blue-200 text-xs sm:text-sm mb-4 sm:mb-6 italic leading-relaxed tracking-wide font-medium">(Application of Deep Learning Models in Predicting SET50 Stock Prices)</p>
               <div class="space-y-3">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
+                <p class="text-white/90 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
                    ศึกษาการประยุกต์ใช้โมเดล Deep learning ต่าง ๆ ในการคาดการณ์ราคาหลักทรัพย์ใน SET50 เพื่อศึกษาหาโมเดลที่เหมาะสมกับบริบทของหลักทรัพย์ในตลาดหลักทรัพย์ของประเทศไทย
                 </p>
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
-                   โดยใช้โมเดล Deep learning พื้นฐานอย่าง <span class="text-white font-bold">LSTM, CNN และ GAN</span> มาพัฒนาต่อยอด ปรับปรุงโครงสร้างของโมเดลให้มีประสิทธิภาพมากขึ้น และวัดผลหาโมเดลที่ดีที่สุดในการคาดการณ์ราคาหลักทรัพย์วันถัดไป
+                <p class="text-white/90 text-xs sm:text-sm leading-relaxed font-medium tracking-wide">
+                   โดยใช้โมเดล Deep learning พื้นฐานอย่าง <span class="text-[#facc15] font-bold">LSTM, CNN และ GAN</span> มาพัฒนาต่อยอด ปรับปรุงโครงสร้างของโมเดลให้มีประสิทธิภาพมากขึ้น และวัดผลหาโมเดลที่ดีที่สุดในการคาดการณ์ราคาหลักทรัพย์วันถัดไป
                 </p>
               </div>
            </div>
@@ -502,25 +519,98 @@
     </div>
   </section>
 
+  <!-- New Voting & Video Information Section -->
+  <section id="voting" class="py-16 sm:py-24 px-4 sm:px-6 bg-slate-100 border-t border-slate-200 relative overflow-hidden w-full">
+    <div class="max-w-5xl mx-auto relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-[#12285e] tracking-wider mb-2">ข้อมูลการลงคะแนนเลือกตั้ง</h2>
+          <div class="w-16 h-1 bg-[#facc15] mx-auto rounded"></div>
+        </div>
+
+        <!-- YouTube Videos Row (บังคับ grid-cols-2 เพื่อให้อยู่บรรทัดเดียวกันเสมอ) -->
+        <div class="grid grid-cols-2 gap-4 sm:gap-8 mb-16">
+            <div class="flex flex-col">
+                <h3 class="font-heading font-bold text-[#12285e] text-xs sm:text-lg mb-2 sm:mb-3 text-center h-auto sm:h-14">ประชาสัมพันธ์การเลือกตั้งกรรมการกองทุนฯ ฝ่ายสมาชิก ปี 2569</h3>
+                <a href="https://www.youtube.com/watch?v=MTbqlesu5u8" target="_blank" rel="noopener noreferrer" class="relative block w-full rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300">
+                    <img src="https://img.youtube.com/vi/MTbqlesu5u8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/MTbqlesu5u8/hqdefault.jpg'" alt="ประชาสัมพันธ์การเลือกตั้งกรรมการกองทุนฯ" class="w-full h-auto object-cover aspect-video transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#ff0000] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="font-heading font-bold text-[#12285e] text-xs sm:text-lg mb-2 sm:mb-3 text-center h-auto sm:h-14">วิธีการลงคะแนนเลือกตั้งกรรมการ กสช. กฟภ. ฝ่ายสมาชิก</h3>
+                <a href="https://www.youtube.com/watch?v=8tza-dbIgCo" target="_blank" rel="noopener noreferrer" class="relative block w-full rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300">
+                    <img src="https://img.youtube.com/vi/8tza-dbIgCo/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/8tza-dbIgCo/hqdefault.jpg'" alt="วิธีการลงคะแนนเลือกตั้งกรรมการ" class="w-full h-auto object-cover aspect-video transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#ff0000] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Highlighted Voting Info Card -->
+        <div class="bg-gradient-blue rounded-[2.5rem] p-8 sm:p-12 text-center text-white shadow-2xl relative overflow-hidden">
+            <!-- decorative background elements -->
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            
+            <div class="relative z-10">
+                <h2 class="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-gradient-gold drop-shadow-lg mb-8 tracking-wider">
+                    โปรด Vote ให้หมายเลข 12
+                </h2>
+                
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 sm:p-10 max-w-3xl mx-auto shadow-xl">
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4 tracking-wide text-white">
+                        ลงคะแนนผ่านระบบ <span class="text-[#facc15] drop-shadow-md">PVD E-VOTE</span>
+                    </h3>
+                    <p class="text-lg sm:text-xl font-medium text-blue-100 mb-6">
+                        บน PEA Fund+ Mobile Application <br class="hidden sm:block">
+                        และ Website : <a href="https://peafund.pea.co.th" target="_blank" class="text-white hover:text-[#facc15] underline decoration-2 underline-offset-4 transition-colors">https://peafund.pea.co.th</a>
+                    </p>
+                    
+                    <div class="inline-block bg-[#08122a]/50 border border-blue-400/30 rounded-2xl px-6 sm:px-8 py-5 mb-6 shadow-inner">
+                        <p class="font-bold text-[#facc15] text-lg sm:text-xl md:text-2xl leading-relaxed tracking-wide">
+                            ตั้งแต่วันที่ 20 มี.ค. 2569 เวลา 08.30 น.<br>
+                            จนถึงวันที่ 31 มี.ค. 2569 เวลา 10.00 น.
+                        </p>
+                    </div>
+
+                    <p class="text-sm sm:text-base text-blue-200/90 leading-relaxed max-w-2xl mx-auto font-light">
+                        และประกาศผลการเลือกตั้งในการประชุมใหญ่สามัญประจำปี 2568 กสช.กฟภ.<br>
+                        วันที่ 31 มี.ค. 2569 ณ ห้องประชุมสุวรรณภูมิ ชั้น 6 อาคาร 4 กฟภ. สำนักงานใหญ่
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </section>
+
   <!-- CTA Footer -->
-  <footer class="py-16 sm:py-24 px-4 sm:px-6 bg-white text-center border-t border-slate-100 relative overflow-hidden w-full">
+  <footer class="py-16 sm:py-24 px-4 sm:px-6 bg-white text-center relative overflow-hidden w-full">
     <div class="w-full max-w-4xl mx-auto relative z-10 px-2 sm:px-4">
-       <!-- Large Number Text Display (No Circle) -->
+       <!-- Large Number Text Display -->
        <div class="w-full flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
          <span class="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-gradient-blue drop-shadow-sm tracking-widest uppercase mb-2">
            หมายเลข
          </span>
-         <!-- 3D Massive Number with extra spacing -->
+         <!-- 3D Massive Number -->
          <span class="font-heading font-black italic number-3d-blue text-[10rem] sm:text-[14rem] md:text-[18rem] tracking-widest hover:scale-105 transition-transform duration-500 cursor-default ml-4 sm:ml-6">
            12
          </span>
        </div>
        
-       <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-6 text-[#1e3a8a] tracking-wider drop-shadow-sm">ขุนพล สมจิตร</h2>
+       <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-6 text-[#12285e] tracking-wider drop-shadow-sm">ขุนพล สมจิตร</h2>
        
-       <!-- Enhanced Full Width Footer Slogan -->
        <div class="w-full mb-12 sm:mb-16 overflow-hidden px-2">
-         <p class="font-heading font-black slogan-text text-gradient-gold italic tracking-tight sm:tracking-widest py-2 drop-shadow-sm mx-auto whitespace-nowrap">
+         <p class="font-heading font-black slogan-text text-[#facc15] italic tracking-tight sm:tracking-widest py-2 drop-shadow-md mx-auto whitespace-nowrap filter drop-shadow(2px 2px 0px rgba(0,0,0,0.8)) text-shadow" style="text-shadow: 1px 1px 0px #12285e, -1px -1px 0px #12285e, 1px -1px 0px #12285e, -1px 1px 0px #12285e;">
            "ยืดหยุ่น ปลอดภัย เข้าใจทุกช่วงวัย"
          </p>
        </div>
